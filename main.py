@@ -5,9 +5,7 @@
 #     print(value)
 
 from keras.models import load_model
-from time import sleep
 from keras.preprocessing.image import img_to_array
-from keras.preprocessing import image
 import cv2
 import numpy as np
 
@@ -19,10 +17,8 @@ emotion_labels = ['Angry', 'Disgust', 'Fear',
                   'Happy', 'Neutral', 'Sad', 'Surprise']
 cap = cv2.VideoCapture(0)
 
-
 while True:
     _, frame = cap.read()
-    labels = []
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     faces = face_classifier.detectMultiScale(gray)
 
